@@ -1,0 +1,9 @@
+{
+    "parameters": {},
+    "readings": {
+        "filename": "/data/Time series/HF04/OD095_01_032A_J95_HF04_BTA002_S1.plc_SENSOR_VALUE.csv",
+        "df_input": null,
+        "datecolumn": 2,
+        "valuecolumn": 4
+    }
+}

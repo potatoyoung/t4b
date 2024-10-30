@@ -1,0 +1,52 @@
+digraph G {
+subgraph  {
+<n<SUB>1</SUB>(Damper)> [color=black, fillcolor="#44546A", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>1</SUB>(Damper)>, labelcharcount=13, labellinecount=1, width=3.0];
+}
+
+subgraph  {
+<n<SUB>3</SUB>(BuildingSpace)> [color=black, fillcolor="#3B3838", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>3</SUB>(BuildingSpace)>, labelcharcount=20, labellinecount=1, width=4.4];
+}
+
+<n<SUB>1</SUB>(Damper)> -> <n<SUB>3</SUB>(BuildingSpace)>  [fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+subgraph  {
+<n<SUB>6</SUB>(Schedule)> [color=black, fillcolor="#666666", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>6</SUB>(Schedule)>, labelcharcount=15, labellinecount=1, width=3.4];
+}
+
+<n<SUB>3</SUB>(BuildingSpace)> -> <n<SUB>6</SUB>(Schedule)>  [fontname="CMU Typewriter Text", label="hasProfile  "];
+subgraph  {
+<n<SUB>2</SUB>(Damper)> [color=black, fillcolor="#44546A", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>2</SUB>(Damper)>, labelcharcount=13, labellinecount=1, width=3.0];
+}
+
+<n<SUB>2</SUB>(Damper)> -> <n<SUB>3</SUB>(BuildingSpace)>  [fontname="CMU Typewriter Text", label="hasFluidReturnedBy  "];
+subgraph  {
+<n<SUB>4</SUB>(Valve)> [color=black, fillcolor="#873939", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>4</SUB>(Valve)>, labelcharcount=12, labellinecount=1, width=2.8000000000000003];
+}
+
+<n<SUB>4</SUB>(Valve)> -> <n<SUB>3</SUB>(BuildingSpace)>  [fontname="CMU Typewriter Text", label="isContainedIn  "];
+subgraph  {
+<n<SUB>5</SUB>(SpaceHeater)> [color=black, fillcolor="#873939", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>5</SUB>(SpaceHeater)>, labelcharcount=18, labellinecount=1, width=4.0];
+}
+
+<n<SUB>4</SUB>(Valve)> -> <n<SUB>5</SUB>(SpaceHeater)>  [fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+<n<SUB>5</SUB>(SpaceHeater)> -> <n<SUB>3</SUB>(BuildingSpace)>  [fontname="CMU Typewriter Text", label="isContainedIn  "];
+subgraph  {
+<n<SUB>8</SUB>(Sensor)> [color=black, fillcolor="#83AF9B", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>8</SUB>(Sensor)>, labelcharcount=13, labellinecount=1, width=3.0];
+}
+
+subgraph  {
+<n<SUB>9</SUB>(Temperature)> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>9</SUB>(Temperature)>, labelcharcount=18, labellinecount=1, width=4.0];
+}
+
+<n<SUB>8</SUB>(Sensor)> -> <n<SUB>9</SUB>(Temperature)>  [fontname="CMU Typewriter Text", label="observes  "];
+subgraph  {
+8 [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=0.3, label=<>, labelcharcount=0, labellinecount=0, shape=circle, width=0.3];
+}
+
+<n<SUB>8</SUB>(Sensor)> -> 8  [arrowhead=none, fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+8 -> <n<SUB>1</SUB>(Damper)>  [label=""];
+subgraph  {
+<n<SUB>10</SUB>(BuildingSpace)> [color=black, fillcolor="#3B3838", fontname="CMU Typewriter Text", fontsize=28, height=0.6, label=<n<SUB>10</SUB>(BuildingSpace)>, labelcharcount=21, labellinecount=1, width=4.6000000000000005];
+}
+
+<n<SUB>10</SUB>(BuildingSpace)> -> <n<SUB>3</SUB>(BuildingSpace)>  [fontname="CMU Typewriter Text", label="connectedTo  "];
+}

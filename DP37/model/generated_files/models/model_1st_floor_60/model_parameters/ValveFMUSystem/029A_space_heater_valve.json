@@ -1,0 +1,7 @@
+{
+    "parameters": {
+        "m_flow_nominal": 0.02,
+        "flowCoefficient.hasValue": 0.57,
+        "dpFixed_nominal": 0
+    }
+}

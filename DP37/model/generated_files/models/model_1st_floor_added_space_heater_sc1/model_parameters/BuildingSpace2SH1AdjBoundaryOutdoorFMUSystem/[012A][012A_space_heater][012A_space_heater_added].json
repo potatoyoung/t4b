@@ -1,0 +1,33 @@
+{
+    "parameters": {
+        "C_supply": 400,
+        "C_wall": 4478892.191772681,
+        "C_int": 25006.836341524,
+        "C_boundary": 1527554.0123256599,
+        "C_air": 9161144.736618588,
+        "R_out": 0.010370240391440523,
+        "R_in":  0.006316276404062634,
+        "R_int": 0.0004338679264954746,
+        "R_boundary": 0.0010539990347069271,
+        "f_wall": 0.10204473373291341,
+        "f_air": 0.13720365714432015,
+        "Q_occ_gain": 61.90391991331024,
+        "CO2_occ_gain": 8.18e-6,
+        "CO2_start": 400,
+        "fraRad_sh1": 0.35,
+        "Q_flow_nominal_sh1": 432,
+        "T_a_nominal_sh1": 55,
+        "T_b_nominal_sh1": 40,
+        "TAir_nominal_sh1": 20,
+        "n_sh1": 1.2940,
+        "fraRad_sh2": 0.35,
+        "Q_flow_nominal_sh2": null,
+        "T_a_nominal_sh2": 55,
+        "T_b_nominal_sh2": 40,
+        "TAir_nominal_sh2": 20,
+        "n_sh2": null,
+        "infiltration": 0.08925916127796507,
+        "airVolume": 79.22,
+        "T_boundary": 20.35090110259425
+    }
+}

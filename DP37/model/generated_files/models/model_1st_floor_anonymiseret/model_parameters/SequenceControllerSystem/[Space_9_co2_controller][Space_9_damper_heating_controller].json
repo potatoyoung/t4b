@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "kp__Space_9_co2_controller": null,
+        "Ti__Space_9_co2_controller": null,
+        "isReverse__Space_9_co2_controller": false,
+        "offValue__Space_9_damper_heating_controller": 0,
+        "onValue__Space_9_damper_heating_controller": 1,
+        "isReverse__Space_9_damper_heating_controller": true
+    }
+}

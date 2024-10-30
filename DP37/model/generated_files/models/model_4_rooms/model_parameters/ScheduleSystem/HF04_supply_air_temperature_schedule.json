@@ -1,0 +1,70 @@
+{
+    "parameters": {
+        "weekDayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "weekendRulesetDict": null,
+        "mondayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "tuesdayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "wednesdayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "thursdayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "fridayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "saturdayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "sundayRulesetDict": {
+            "ruleset_default_value": 21,
+            "ruleset_start_minute": [],
+            "ruleset_end_minute": [],
+            "ruleset_start_hour": [],
+            "ruleset_end_hour": [],
+            "ruleset_value": []
+        },
+        "add_noise": false
+    }
+}

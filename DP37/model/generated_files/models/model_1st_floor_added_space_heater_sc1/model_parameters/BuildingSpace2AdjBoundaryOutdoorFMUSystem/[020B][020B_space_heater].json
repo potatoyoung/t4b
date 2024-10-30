@@ -1,0 +1,27 @@
+{
+    "parameters": {
+        "C_supply": 400,
+        "C_wall": 5979753.33939453,
+        "C_int": 25006.836341524,
+        "C_boundary": 4660000,
+        "C_air": 7043640,
+        "R_out":  0.01007096,
+        "R_in":   0.01007096,
+        "R_int": 0.0004338679264954746,
+        "R_boundary": 0.000905261,
+        "f_wall": 0.1,
+        "f_air": 3,
+        "Q_occ_gain": 5,
+        "CO2_occ_gain": 8.18e-6,
+        "CO2_start": 400,
+        "fraRad_sh": 0.35,
+        "Q_flow_nominal_sh": 604,
+        "T_a_nominal_sh": 55,
+        "T_b_nominal_sh": 40,
+        "TAir_nominal_sh": 20,
+        "n_sh": 1.2803,
+        "infiltration": 0.03,
+        "airVolume": 125.82,
+        "T_boundary": 18.5
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "kp__007A_co2_controller": 2.50773924e-01,
+        "Ti__007A_co2_controller": 4.38174242e-01,
+        "isReverse__007A_co2_controller": false,
+        "offValue__007A_damper_heating_controller": 0.3,
+        "onValue__007A_damper_heating_controller": 0.3,
+        "isReverse__007A_damper_heating_controller": true
+    }
+}

@@ -1,0 +1,2900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="EPlusFan_FMU_test2port"
+  guid="{02d908bf-09f2-4010-ad86-c7af589fa2da}"
+  generationTool="Dymola Version 2023x Refresh 1, 2023-04-12"
+  generationDateAndTime="2023-10-11T08:25:00Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="0">
+  <CoSimulation
+    modelIdentifier="EPlusFan_0FMU_0test2port"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canNotUseMemoryManagementFunctions="true"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true"
+    providesDirectionalDerivative="true"/>
+  <UnitDefinitions>
+    <Unit
+      name="1"/>
+    <Unit
+      name="1/K">
+      <BaseUnit K="-1"/>
+    </Unit>
+    <Unit
+      name="J">
+      <BaseUnit kg="1"
+        m="2"
+        s="-2"/>
+    </Unit>
+    <Unit
+      name="J/(kg.K)">
+      <BaseUnit m="2"
+        s="-2"
+        K="-1"/>
+    </Unit>
+    <Unit
+      name="J/kg">
+      <BaseUnit m="2"
+        s="-2"/>
+    </Unit>
+    <Unit
+      name="K">
+      <BaseUnit K="1"/>
+      <DisplayUnit
+        name="degC"
+        offset="-273.15"/>
+    </Unit>
+    <Unit
+      name="Pa">
+      <BaseUnit kg="1"
+        m="-1"
+        s="-2"/>
+      <DisplayUnit
+        name="Pa"/>
+      <DisplayUnit
+        name="bar"
+        factor="1E-05"/>
+    </Unit>
+    <Unit
+      name="Pa.s">
+      <BaseUnit kg="1"
+        m="-1"
+        s="-1"/>
+    </Unit>
+    <Unit
+      name="W">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"/>
+    </Unit>
+    <Unit
+      name="kg">
+      <BaseUnit kg="1"/>
+    </Unit>
+    <Unit
+      name="kg/kg"/>
+    <Unit
+      name="kg/m3">
+      <BaseUnit kg="1"
+        m="-3"/>
+      <DisplayUnit
+        name="g/cm3"
+        factor="0.001"/>
+    </Unit>
+    <Unit
+      name="kg/s">
+      <BaseUnit kg="1"
+        s="-1"/>
+    </Unit>
+    <Unit
+      name="m3">
+      <BaseUnit m="3"/>
+    </Unit>
+    <Unit
+      name="s">
+      <BaseUnit s="1"/>
+    </Unit>
+    <Unit
+      name="s/kg">
+      <BaseUnit kg="-1"
+        s="1"/>
+    </Unit>
+  </UnitDefinitions>
+  <TypeDefinitions>
+    <SimpleType
+      name="Buildings.Fluid.FMI.Interfaces.MassFractionConnector">
+      <Real
+        quantity="MassFraction"
+        unit="1"
+        min="0.0"
+        max="1.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Buildings.Fluid.FMI.Interfaces.PressureOutput">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="Pa"
+        min="0.0"
+        nominal="100000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealInput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealOutput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Density">
+      <Real
+        quantity="Density"
+        unit="kg/m3"
+        displayUnit="g/cm3"
+        min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.DynamicViscosity">
+      <Real
+        quantity="DynamicViscosity"
+        unit="Pa.s"
+        min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.HeatFlowRate">
+      <Real
+        quantity="Power"
+        unit="W"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.LinearTemperatureCoefficient">
+      <Real
+        quantity="LinearTemperatureCoefficient"
+        unit="1/K"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.MassFlowRate">
+      <Real
+        quantity="MassFlowRate"
+        unit="kg/s"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.MassFraction">
+      <Real
+        quantity="MassFraction"
+        unit="1"
+        min="0.0"
+        max="1.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Power">
+      <Real
+        quantity="Power"
+        unit="W"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Pressure">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.PressureDifference">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.SpecificEnthalpy">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.SpecificHeatCapacity">
+      <Real
+        quantity="SpecificHeatCapacity"
+        unit="J/(kg.K)"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="0.0"
+        nominal="300.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.TemperatureDifference">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        relativeQuantity="true"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Time">
+      <Real
+        quantity="Time"
+        unit="s"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Units.SI.Volume">
+      <Real
+        quantity="Volume"
+        unit="m3"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Fluid.Types.Dynamics">
+      <Enumeration>
+        <Item name="DynamicFreeInitial"
+          value="1"
+          description="DynamicFreeInitial -- Dynamic balance, Initial guess value"/>
+        <Item name="FixedInitial"
+          value="2"
+          description="FixedInitial -- Dynamic balance, Initial value fixed"/>
+        <Item name="SteadyStateInitial"
+          value="3"
+          description="SteadyStateInitial -- Dynamic balance, Steady state initial with guess value"/>
+        <Item name="SteadyState"
+          value="4"
+          description="SteadyState -- Steady state balance, Initial guess value"/>
+      </Enumeration>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="100.0"
+    tolerance="0.0001"/>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="c1"
+      valueReference="16777216"
+      description="Power coefficient 1"
+      causality="parameter"
+      variability="tunable">
+      <Real start="0.027828"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="c2"
+      valueReference="16777217"
+      description="Power coefficient 2"
+      causality="parameter"
+      variability="tunable">
+      <Real start="0.026583"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="c3"
+      valueReference="16777218"
+      description="Power coefficient 3"
+      causality="parameter"
+      variability="tunable">
+      <Real start="-0.087069"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="c4"
+      valueReference="16777219"
+      description="Power coefficient 4"
+      causality="parameter"
+      variability="tunable">
+      <Real start="1.03092"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="f_total"
+      valueReference="16777220"
+      causality="parameter"
+      variability="tunable">
+      <Real start="0.7"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="m_flow_small"
+      valueReference="100663296"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="allowFlowReversal"
+      valueReference="100663297"
+      description="Power coefficient 4"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="tau"
+      valueReference="16777221"
+      causality="parameter"
+      variability="fixed">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="energyDynamics"
+      valueReference="100663298"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="nominalAirFlowRate"
+      valueReference="16777222"
+      description="Nominal air flow rate"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="nominalPowerRate"
+      valueReference="16777223"
+      description="Nominal power rate"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.Power"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="Power"
+      valueReference="335544320"
+      causality="output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 13 -->
+    <ScalarVariable
+      name="inlet.use_p_in"
+      valueReference="100663299"
+      description="= true to use a pressure from connector, false to output Medium.p_default"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 14 -->
+    <ScalarVariable
+      name="inlet.allowFlowReversal"
+      valueReference="100663300"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 15 -->
+    <ScalarVariable
+      name="inlet.m_flow"
+      valueReference="352321536"
+      description="Mass flow rate from the connection point into the component"
+      causality="input">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 16 -->
+    <ScalarVariable
+      name="inlet.forward.T"
+      valueReference="352321537"
+      description="Temperature"
+      causality="input">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 17 -->
+    <ScalarVariable
+      name="inlet.forward.X_w"
+      valueReference="352321538"
+      description="Water vapor mass fractions per kg total air"
+      causality="input">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"
+        nominal="0.1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 18 -->
+    <ScalarVariable
+      name="inlet.backward.T"
+      valueReference="335544321"
+      description="Temperature"
+      causality="output">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 19 -->
+    <ScalarVariable
+      name="inlet.backward.X_w"
+      valueReference="335544322"
+      description="Water vapor mass fractions per kg total air"
+      causality="output">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 20 -->
+    <ScalarVariable
+      name="outlet.use_p_in"
+      valueReference="100663301"
+      description="= true to use pressure connector, false to remove it"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 21 -->
+    <ScalarVariable
+      name="outlet.allowFlowReversal"
+      valueReference="100663302"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 22 -->
+    <ScalarVariable
+      name="outlet.m_flow"
+      valueReference="335544323"
+      description="Mass flow rate from the connection point into the component"
+      causality="output">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 23 -->
+    <ScalarVariable
+      name="outlet.backward.T"
+      valueReference="352321539"
+      description="Temperature"
+      causality="input">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 24 -->
+    <ScalarVariable
+      name="outlet.backward.X_w"
+      valueReference="352321540"
+      description="Water vapor mass fractions per kg total air"
+      causality="input">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"
+        nominal="0.1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 25 -->
+    <ScalarVariable
+      name="outlet.forward.T"
+      valueReference="335544324"
+      description="Temperature"
+      causality="output">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 26 -->
+    <ScalarVariable
+      name="outlet.forward.X_w"
+      valueReference="335544325"
+      description="Water vapor mass fractions per kg total air"
+      causality="output">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 27 -->
+    <ScalarVariable
+      name="ePlusFan.allowFlowReversal"
+      valueReference="100663303"
+      description="= false to simplify equations, assuming, but not enforcing, no flow reversal"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 28 -->
+    <ScalarVariable
+      name="ePlusFan.port_a.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-1E+60"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 29 -->
+    <ScalarVariable
+      name="ePlusFan.port_a.p"
+      valueReference="100663304"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 30 -->
+    <ScalarVariable
+      name="ePlusFan.port_a.h_outflow"
+      valueReference="369098911"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 31 -->
+    <ScalarVariable
+      name="ePlusFan.port_a.Xi_outflow[1]"
+      valueReference="436207620"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 32 -->
+    <ScalarVariable
+      name="ePlusFan.port_b.m_flow"
+      valueReference="905969833"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 33 -->
+    <ScalarVariable
+      name="ePlusFan.port_b.p"
+      valueReference="100663305"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 34 -->
+    <ScalarVariable
+      name="ePlusFan.port_b.h_outflow"
+      valueReference="369098912"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 35 -->
+    <ScalarVariable
+      name="ePlusFan.port_b.Xi_outflow[1]"
+      valueReference="436207618"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 36 -->
+    <ScalarVariable
+      name="ePlusFan.m_flow_nominal"
+      valueReference="100663306"
+      description="Nominal mass flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 37 -->
+    <ScalarVariable
+      name="ePlusFan.m_flow_small"
+      valueReference="100663307"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 38 -->
+    <ScalarVariable
+      name="ePlusFan.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from port_a to port_b (m_flow &gt; 0 is design flow direction)">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 39 -->
+    <ScalarVariable
+      name="ePlusFan.dp"
+      valueReference="100663309"
+      description="Pressure difference between port_a and port_b"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 40 -->
+    <ScalarVariable
+      name="ePlusFan._m_flow_start"
+      valueReference="100663310"
+      description="Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 41 -->
+    <ScalarVariable
+      name="ePlusFan._dp_start"
+      valueReference="100663311"
+      description="Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 42 -->
+    <ScalarVariable
+      name="ePlusFan.computeFlowResistance"
+      valueReference="100663312"
+      description="=true, compute flow resistance. Set to false to assume no friction"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 43 -->
+    <ScalarVariable
+      name="ePlusFan.from_dp"
+      valueReference="100663313"
+      description="= true, use m_flow = f(dp) else dp = f(m_flow)"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 44 -->
+    <ScalarVariable
+      name="ePlusFan.dp_nominal"
+      valueReference="100663314"
+      description="Pressure difference"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        min="0.0"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 45 -->
+    <ScalarVariable
+      name="ePlusFan.linearizeFlowResistance"
+      valueReference="100663315"
+      description="= true, use linear relation between m_flow and dp for any flow rate"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 46 -->
+    <ScalarVariable
+      name="ePlusFan.deltaM"
+      valueReference="100663316"
+      description="Fraction of nominal flow rate where flow transitions to laminar"
+      variability="constant">
+      <Real start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 47 -->
+    <ScalarVariable
+      name="ePlusFan.tau"
+      valueReference="100663318"
+      description="Time constant at nominal flow (if energyDynamics &lt;&gt; SteadyState)"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.Units.SI.Time"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 48 -->
+    <ScalarVariable
+      name="ePlusFan.energyDynamics"
+      valueReference="100663319"
+      description="Type of energy balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 49 -->
+    <ScalarVariable
+      name="ePlusFan.p_start"
+      valueReference="100663320"
+      description="Start value of pressure"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 50 -->
+    <ScalarVariable
+      name="ePlusFan.T_start"
+      valueReference="100663321"
+      description="Start value of temperature"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 51 -->
+    <ScalarVariable
+      name="ePlusFan.X_start[1]"
+      valueReference="100663322"
+      description="Start value of mass fractions m_i/m"
+      variability="constant">
+      <Real
+        quantity="water"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 52 -->
+    <ScalarVariable
+      name="ePlusFan.X_start[2]"
+      valueReference="100663323"
+      description="Start value of mass fractions m_i/m"
+      variability="constant">
+      <Real
+        quantity="air"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 53 -->
+    <ScalarVariable
+      name="ePlusFan.vol.energyDynamics"
+      valueReference="100663324"
+      description="Type of energy balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 54 -->
+    <ScalarVariable
+      name="ePlusFan.vol.massDynamics"
+      valueReference="100663325"
+      description="Type of mass balance: dynamic (3 initialization options) or steady state, must be steady state if energyDynamics is steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 55 -->
+    <ScalarVariable
+      name="ePlusFan.vol.substanceDynamics"
+      valueReference="100663326"
+      description="Type of independent mass fraction balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 56 -->
+    <ScalarVariable
+      name="ePlusFan.vol.traceDynamics"
+      valueReference="100663327"
+      description="Type of trace substance balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 57 -->
+    <ScalarVariable
+      name="ePlusFan.vol.p_start"
+      valueReference="100663328"
+      description="Start value of pressure"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 58 -->
+    <ScalarVariable
+      name="ePlusFan.vol.T_start"
+      valueReference="100663329"
+      description="Start value of temperature"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 59 -->
+    <ScalarVariable
+      name="ePlusFan.vol.X_start[1]"
+      valueReference="100663330"
+      description="Start value of mass fractions m_i/m"
+      variability="constant">
+      <Real
+        quantity="water"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 60 -->
+    <ScalarVariable
+      name="ePlusFan.vol.X_start[2]"
+      valueReference="100663331"
+      description="Start value of mass fractions m_i/m"
+      variability="constant">
+      <Real
+        quantity="air"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 61 -->
+    <ScalarVariable
+      name="ePlusFan.vol.mSenFac"
+      valueReference="100663332"
+      description="Factor for scaling the sensible thermal mass of the volume"
+      variability="constant">
+      <Real min="1.0"
+        start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 62 -->
+    <ScalarVariable
+      name="ePlusFan.vol.wrongEnergyMassBalanceConfiguration"
+      valueReference="100663333"
+      description="True if configuration of energy and mass balance is wrong."
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 63 -->
+    <ScalarVariable
+      name="ePlusFan.vol.prescribedHeatFlowRate"
+      valueReference="100663335"
+      description="Set to true if the model has a prescribed heat flow at its heatPort. If the heat flow rate at the heatPort is only based on temperature difference, then set to false"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 64 -->
+    <ScalarVariable
+      name="ePlusFan.vol.simplify_mWat_flow"
+      valueReference="100663336"
+      description="Set to true to cause port_a.m_flow + port_b.m_flow = 0 even if mWat_flow is non-zero"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 65 -->
+    <ScalarVariable
+      name="ePlusFan.vol.m_flow_nominal"
+      valueReference="100663337"
+      description="Nominal mass flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 66 -->
+    <ScalarVariable
+      name="ePlusFan.vol.nPorts"
+      valueReference="100663338"
+      description="Number of ports"
+      variability="constant">
+      <Integer start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 67 -->
+    <ScalarVariable
+      name="ePlusFan.vol.m_flow_small"
+      valueReference="100663339"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 68 -->
+    <ScalarVariable
+      name="ePlusFan.vol.allowFlowReversal"
+      valueReference="100663340"
+      description="= false to simplify equations, assuming, but not enforcing, no flow reversal. Used only if model has two ports."
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 69 -->
+    <ScalarVariable
+      name="ePlusFan.vol.V"
+      valueReference="100663341"
+      description="Volume"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.Volume"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 70 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[1].m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 71 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[1].p"
+      valueReference="100663342"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 72 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[1].h_outflow"
+      valueReference="369098911"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 73 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[1].Xi_outflow[1]"
+      valueReference="436207620"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 74 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[2].m_flow"
+      valueReference="905969833"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 75 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[2].p"
+      valueReference="100663343"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 76 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[2].h_outflow"
+      valueReference="369098912"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 77 -->
+    <ScalarVariable
+      name="ePlusFan.vol.ports[2].Xi_outflow[1]"
+      valueReference="436207618"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 78 -->
+    <ScalarVariable
+      name="ePlusFan.vol.T"
+      valueReference="905969825"
+      description="Temperature of the fluid">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 79 -->
+    <ScalarVariable
+      name="ePlusFan.vol.U"
+      valueReference="100663344"
+      description="Internal energy of the component"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="J"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 80 -->
+    <ScalarVariable
+      name="ePlusFan.vol.p"
+      valueReference="100663345"
+      description="Pressure of the fluid"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.Pressure"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 81 -->
+    <ScalarVariable
+      name="ePlusFan.vol.m"
+      valueReference="100663346"
+      description="Mass of the component"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="kg"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 82 -->
+    <ScalarVariable
+      name="ePlusFan.vol.Xi[1]"
+      valueReference="905969826"
+      description="Species concentration of the fluid">
+      <Real
+        declaredType="Modelica.Units.SI.MassFraction"
+        nominal="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 83 -->
+    <ScalarVariable
+      name="ePlusFan.vol.mXi[1]"
+      valueReference="100663347"
+      description="Species mass of the component"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="kg"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 84 -->
+    <ScalarVariable
+      name="ePlusFan.vol.rho_start"
+      valueReference="100663348"
+      description="Density, used to compute start and guess values"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.Density"
+        start="1.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 85 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_default.p"
+      valueReference="100663349"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 86 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_default.T"
+      valueReference="100663350"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 87 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_default.X[1]"
+      valueReference="100663351"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 88 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_default.X[2]"
+      valueReference="100663352"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 89 -->
+    <ScalarVariable
+      name="ePlusFan.vol.rho_default"
+      valueReference="100663353"
+      description="Density, used to compute fluid mass"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.Density"
+        start="1.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 90 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_start.p"
+      valueReference="100663354"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 91 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_start.T"
+      valueReference="100663355"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 92 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_start.X[1]"
+      valueReference="100663356"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 93 -->
+    <ScalarVariable
+      name="ePlusFan.vol.state_start.X[2]"
+      valueReference="100663357"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 94 -->
+    <ScalarVariable
+      name="ePlusFan.vol.useSteadyStateTwoPort"
+      valueReference="100663358"
+      description="Flag, true if the model has two ports only and uses a steady state balance"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 95 -->
+    <ScalarVariable
+      name="ePlusFan.vol.hOut_internal"
+      valueReference="905969827"
+      description="Internal connector for leaving temperature of the component">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="J/kg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 96 -->
+    <ScalarVariable
+      name="ePlusFan.vol.XiOut_internal[1]"
+      valueReference="905969826"
+      description="Internal connector for leaving species concentration of the component">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 97 -->
+    <ScalarVariable
+      name="ePlusFan.vol.preTem.port.T"
+      valueReference="905969825"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 98 -->
+    <ScalarVariable
+      name="ePlusFan.vol.preTem.port.Q_flow"
+      valueReference="369098916"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.Units.SI.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 99 -->
+    <ScalarVariable
+      name="ePlusFan.vol.preTem.T"
+      valueReference="905969825">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 100 -->
+    <ScalarVariable
+      name="ePlusFan.vol.portT.y"
+      valueReference="905969825"
+      description="Value of Real output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 101 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heaFloSen.Q_flow"
+      valueReference="369098916"
+      description="Heat flow from port_a to port_b as output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="W"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 102 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heaFloSen.port_a.T"
+      valueReference="905969825"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 103 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heaFloSen.port_a.Q_flow"
+      valueReference="369098916"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.Units.SI.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 104 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heaFloSen.port_b.T"
+      valueReference="905969825"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 105 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heaFloSen.port_b.Q_flow"
+      valueReference="369098920"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.Units.SI.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 106 -->
+    <ScalarVariable
+      name="ePlusFan.vol.use_C_flow"
+      valueReference="100663359"
+      description="Set to true to enable input connector for trace substance"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 107 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heatPort.T"
+      valueReference="905969825"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 108 -->
+    <ScalarVariable
+      name="ePlusFan.vol.heatPort.Q_flow"
+      valueReference="369098916"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.Units.SI.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 109 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.allowFlowReversal"
+      valueReference="100663360"
+      description="= false to simplify equations, assuming, but not enforcing, no flow reversal"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 110 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_a.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-1E+60"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 111 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_a.p"
+      valueReference="100663361"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 112 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_a.h_outflow"
+      valueReference="369098911"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 113 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_a.Xi_outflow[1]"
+      valueReference="436207620"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 114 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_b.m_flow"
+      valueReference="905969833"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 115 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_b.p"
+      valueReference="100663362"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 116 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_b.h_outflow"
+      valueReference="369098912"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 117 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.port_b.Xi_outflow[1]"
+      valueReference="436207618"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 118 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.m_flow_nominal"
+      valueReference="100663363"
+      description="Nominal mass flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 119 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.m_flow_small"
+      valueReference="100663364"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 120 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from port_a to port_b (m_flow &gt; 0 is design flow direction)">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 121 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.dp"
+      valueReference="100663366"
+      description="Pressure difference between port_a and port_b"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 122 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal._m_flow_start"
+      valueReference="100663367"
+      description="Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 123 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal._dp_start"
+      valueReference="100663368"
+      description="Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 124 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.simplify_mWat_flow"
+      valueReference="100663369"
+      description="Set to true to cause port_a.m_flow + port_b.m_flow = 0 even if mWat_flow is non-zero"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 125 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.prescribedHeatFlowRate"
+      valueReference="100663370"
+      description="Set to true if the heat flow rate is not a function of a temperature difference to the fluid temperature"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 126 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.use_mWat_flow"
+      valueReference="100663371"
+      description="Set to true to enable input connector for moisture mass flow rate"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 127 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.use_C_flow"
+      valueReference="100663372"
+      description="Set to true to enable input connector for trace substance"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 128 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.Q_flow"
+      valueReference="369098916"
+      description="Sensible plus latent heat flow rate transferred into the medium">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="W"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 129 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.hOut"
+      valueReference="905969827"
+      description="Leaving specific enthalpy of the component">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="J/kg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 130 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.XiOut[1]"
+      valueReference="905969826"
+      description="Leaving species concentration of the component">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="1"
+        min="0.0"
+        max="1.0"
+        nominal="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 131 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.use_m_flowInv"
+      valueReference="100663373"
+      description="Flag, true if m_flowInv is used in the model"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 132 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.s[1]"
+      valueReference="100663374"
+      description="Vector with zero everywhere except where species is"
+      variability="constant">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 133 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.m_flowInv"
+      valueReference="369098917"
+      description="Regularization of 1/m_flow of port_a">
+      <Real
+        unit="s/kg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 134 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.mXi_flow[1]"
+      valueReference="100663375"
+      description="Mass flow rates of independent substances added to the medium"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 135 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.deltaReg"
+      valueReference="100663376"
+      description="Smoothing region for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 136 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.deltaInvReg"
+      valueReference="100663377"
+      description="Inverse value of delta for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 137 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.aReg"
+      valueReference="100663378"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 138 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.bReg"
+      valueReference="100663379"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 139 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.cReg"
+      valueReference="100663380"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 140 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.dReg"
+      valueReference="100663381"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 141 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.eReg"
+      valueReference="100663382"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 142 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.fReg"
+      valueReference="100663383"
+      description="Polynomial coefficient for inverseXRegularized"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 143 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.state_default.p"
+      valueReference="100663384"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 144 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.state_default.T"
+      valueReference="100663385"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 145 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.state_default.X[1]"
+      valueReference="100663386"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 146 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.state_default.X[2]"
+      valueReference="100663387"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 147 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.cp_default"
+      valueReference="100663388"
+      description="Specific heat capacity, used to verify energy conservation"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.SpecificHeatCapacity"
+        start="1014.54"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 148 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.dTMax"
+      valueReference="100663389"
+      description="Maximum temperature difference across the StaticTwoPortConservationEquation"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.TemperatureDifference"
+        min="1.0"
+        start="200"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 149 -->
+    <ScalarVariable
+      name="ePlusFan.vol.steBal.mWat_flow_internal"
+      valueReference="100663390"
+      description="Needed to connect to conditional connector"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="kg/s"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 150 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.allowFlowReversal"
+      valueReference="100663391"
+      description="= false to simplify equations, assuming, but not enforcing, no flow reversal"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 151 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_a.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-1E+60"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 152 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_a.p"
+      valueReference="100663392"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 153 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_a.h_outflow"
+      valueReference="369098911"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 154 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_a.Xi_outflow[1]"
+      valueReference="436207620"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 155 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_b.m_flow"
+      valueReference="905969833"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="1E+60"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 156 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_b.p"
+      valueReference="100663393"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 157 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_b.h_outflow"
+      valueReference="369098922"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 158 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.port_b.Xi_outflow[1]"
+      valueReference="436207618"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 159 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.m_flow_nominal"
+      valueReference="100663394"
+      description="Nominal mass flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 160 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.m_flow_small"
+      valueReference="100663395"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 161 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from port_a to port_b (m_flow &gt; 0 is design flow direction)">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 162 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.dp"
+      valueReference="100663397"
+      description="Pressure difference between port_a and port_b"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        nominal="1.0"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 163 -->
+    <ScalarVariable
+      name="ePlusFan.preDro._m_flow_start"
+      valueReference="100663398"
+      description="Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 164 -->
+    <ScalarVariable
+      name="ePlusFan.preDro._dp_start"
+      valueReference="100663399"
+      description="Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 165 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.from_dp"
+      valueReference="100663401"
+      description="= true, use m_flow = f(dp) else dp = f(m_flow)"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 166 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.dp_nominal"
+      valueReference="100663402"
+      description="Pressure drop at nominal mass flow rate"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 167 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.linearized"
+      valueReference="100663403"
+      description="= true, use linear relation between m_flow and dp for any flow rate"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 168 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.m_flow_turbulent"
+      valueReference="100663404"
+      description="Turbulent flow if |m_flow| &gt;= m_flow_turbulent"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"
+        min="0.0"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 169 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.sta_default.p"
+      valueReference="100663405"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 170 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.sta_default.T"
+      valueReference="100663406"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 171 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.sta_default.X[1]"
+      valueReference="100663407"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 172 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.sta_default.X[2]"
+      valueReference="100663408"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 173 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.eta_default"
+      valueReference="100663409"
+      description="Dynamic viscosity, used to compute transition to turbulent flow regime"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.DynamicViscosity"
+        start="1.8355238883748174E-05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 174 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.m_flow_nominal_pos"
+      valueReference="100663410"
+      description="Absolute value of nominal flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 175 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.dp_nominal_pos"
+      valueReference="100663411"
+      description="Absolute value of nominal pressure difference"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.PressureDifference"
+        displayUnit="Pa"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 176 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.deltaM"
+      valueReference="100663412"
+      description="Fraction of nominal mass flow rate where transition to turbulent occurs"
+      variability="constant">
+      <Real min="1E-06"
+        start="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 177 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.k"
+      valueReference="100663413"
+      description="Flow coefficient, k=m_flow/sqrt(dp), with unit=(kg.m)^(1/2)"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 178 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.computeFlowResistance"
+      valueReference="100663414"
+      description="Flag to enable/disable computation of flow resistance"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 179 -->
+    <ScalarVariable
+      name="ePlusFan.preDro.coeff"
+      valueReference="100663415"
+      description="Precomputed coefficient to avoid division by parameter"
+      variability="constant">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 180 -->
+    <ScalarVariable
+      name="ePlusFan.sta_default.p"
+      valueReference="100663416"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 181 -->
+    <ScalarVariable
+      name="ePlusFan.sta_default.T"
+      valueReference="100663417"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 182 -->
+    <ScalarVariable
+      name="ePlusFan.sta_default.X[1]"
+      valueReference="100663418"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 183 -->
+    <ScalarVariable
+      name="ePlusFan.sta_default.X[2]"
+      valueReference="100663419"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 184 -->
+    <ScalarVariable
+      name="ePlusFan.rho_default"
+      valueReference="100663420"
+      description="Density, used to compute fluid volume"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.Density"
+        start="1.2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 185 -->
+    <ScalarVariable
+      name="ePlusFan.sta_start.p"
+      valueReference="100663421"
+      description="Absolute pressure of medium"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 186 -->
+    <ScalarVariable
+      name="ePlusFan.sta_start.T"
+      valueReference="100663422"
+      description="Temperature of medium"
+      variability="constant">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"
+        start="295.65"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 187 -->
+    <ScalarVariable
+      name="ePlusFan.sta_start.X[1]"
+      valueReference="100663423"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 188 -->
+    <ScalarVariable
+      name="ePlusFan.sta_start.X[2]"
+      valueReference="100663424"
+      description="Mass fractions (= (component mass)/total mass  m_i/m)"
+      variability="constant">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 189 -->
+    <ScalarVariable
+      name="ePlusFan.h_outflow_start"
+      valueReference="100663425"
+      description="Start value for outflowing enthalpy"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.SpecificEnthalpy"
+        start="47837.295"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 190 -->
+    <ScalarVariable
+      name="ePlusFan.c1"
+      valueReference="100663426"
+      description="Power coefficient 1"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 191 -->
+    <ScalarVariable
+      name="ePlusFan.c2"
+      valueReference="100663427"
+      description="Power coefficient 2"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 192 -->
+    <ScalarVariable
+      name="ePlusFan.c3"
+      valueReference="100663428"
+      description="Power coefficient 3"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 193 -->
+    <ScalarVariable
+      name="ePlusFan.c4"
+      valueReference="100663429"
+      description="Power coefficient 4"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 194 -->
+    <ScalarVariable
+      name="ePlusFan.nominalAirFlowRate"
+      valueReference="100663430"
+      description="Nominal air flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 195 -->
+    <ScalarVariable
+      name="ePlusFan.nominalPowerRate"
+      valueReference="100663431"
+      description="Nominal power rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.Power"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 196 -->
+    <ScalarVariable
+      name="ePlusFan.f_total"
+      valueReference="100663432"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 197 -->
+    <ScalarVariable
+      name="ePlusFan.Power"
+      valueReference="335544320"
+      description="Power consumption of the fan">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 198 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.f_flow"
+      valueReference="369098918">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 199 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.f_pl"
+      valueReference="369098919">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 200 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.c1"
+      valueReference="100663433"
+      description="Power coefficient 1"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 201 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.c2"
+      valueReference="100663434"
+      description="Power coefficient 2"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 202 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.c3"
+      valueReference="100663435"
+      description="Power coefficient 3"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 203 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.c4"
+      valueReference="100663436"
+      description="Power coefficient 4"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 204 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.nominalAirFlowRate"
+      valueReference="100663437"
+      description="Nominal air flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 205 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.nominalPowerRate"
+      valueReference="100663438"
+      description="Nominal power rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.Units.SI.Power"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 206 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.m_flow_small"
+      valueReference="100663439"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 207 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.f_total"
+      valueReference="100663440"
+      variability="tunable">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 208 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.airFlowRate"
+      valueReference="436207616">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 209 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.Power"
+      valueReference="335544320">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 210 -->
+    <ScalarVariable
+      name="ePlusFan.powerCalculation.HeatToAir"
+      valueReference="369098916">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 211 -->
+    <ScalarVariable
+      name="ePlusFan.prePow.T_ref"
+      valueReference="100663441"
+      description="Reference temperature"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"
+        start="293.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 212 -->
+    <ScalarVariable
+      name="ePlusFan.prePow.alpha"
+      valueReference="100663442"
+      description="Temperature coefficient of heat flow rate"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Units.SI.LinearTemperatureCoefficient"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 213 -->
+    <ScalarVariable
+      name="ePlusFan.prePow.Q_flow"
+      valueReference="369098916">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        unit="W"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 214 -->
+    <ScalarVariable
+      name="ePlusFan.prePow.port.T"
+      valueReference="905969825"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.Units.SI.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 215 -->
+    <ScalarVariable
+      name="ePlusFan.prePow.port.Q_flow"
+      valueReference="369098920"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.Units.SI.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 216 -->
+    <ScalarVariable
+      name="bouIn1.allowFlowReversal"
+      valueReference="100663443"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 217 -->
+    <ScalarVariable
+      name="bouIn1.use_p_in"
+      valueReference="100663444"
+      description="= true to use a pressure from connector, false to output Medium.p_default"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 218 -->
+    <ScalarVariable
+      name="bouIn1.inlet.use_p_in"
+      valueReference="100663445"
+      description="= true to use a pressure from connector, false to output Medium.p_default"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 219 -->
+    <ScalarVariable
+      name="bouIn1.inlet.allowFlowReversal"
+      valueReference="100663446"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 220 -->
+    <ScalarVariable
+      name="bouIn1.inlet.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 221 -->
+    <ScalarVariable
+      name="bouIn1.inlet.forward.T"
+      valueReference="436207617"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 222 -->
+    <ScalarVariable
+      name="bouIn1.inlet.forward.X_w"
+      valueReference="436207618"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 223 -->
+    <ScalarVariable
+      name="bouIn1.inlet.backward.T"
+      valueReference="335544321"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 224 -->
+    <ScalarVariable
+      name="bouIn1.inlet.backward.X_w"
+      valueReference="436207620"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 225 -->
+    <ScalarVariable
+      name="bouIn1.port_b.m_flow"
+      valueReference="905969833"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 226 -->
+    <ScalarVariable
+      name="bouIn1.port_b.p"
+      valueReference="100663447"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 227 -->
+    <ScalarVariable
+      name="bouIn1.port_b.h_outflow"
+      valueReference="369098922"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 228 -->
+    <ScalarVariable
+      name="bouIn1.port_b.Xi_outflow[1]"
+      valueReference="436207618"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 229 -->
+    <ScalarVariable
+      name="bouIn1.bacPro_internal.T"
+      valueReference="335544321"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 230 -->
+    <ScalarVariable
+      name="bouIn1.bacPro_internal.X_w"
+      valueReference="436207620"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 231 -->
+    <ScalarVariable
+      name="bouIn1.p_in_internal"
+      valueReference="100663448"
+      description="Internal connector for pressure"
+      variability="constant">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.PressureOutput"
+        start="101325"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 232 -->
+    <ScalarVariable
+      name="bouIn1.X_w_in_internal"
+      valueReference="436207618"
+      description="Internal connector for mass fraction of forward flow properties">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 233 -->
+    <ScalarVariable
+      name="bouIn1.X_w_out_internal"
+      valueReference="436207620"
+      description="Internal connector for mass fraction of backward flow properties">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 234 -->
+    <ScalarVariable
+      name="bouOut2.allowFlowReversal"
+      valueReference="100663449"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 235 -->
+    <ScalarVariable
+      name="bouOut2.use_p_in"
+      valueReference="100663450"
+      description="= true to use a pressure from connector, false to output Medium.p_default"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 236 -->
+    <ScalarVariable
+      name="bouOut2.outlet.use_p_in"
+      valueReference="100663451"
+      description="= true to use pressure connector, false to remove it"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 237 -->
+    <ScalarVariable
+      name="bouOut2.outlet.allowFlowReversal"
+      valueReference="100663452"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 238 -->
+    <ScalarVariable
+      name="bouOut2.outlet.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 239 -->
+    <ScalarVariable
+      name="bouOut2.outlet.backward.T"
+      valueReference="436207619"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 240 -->
+    <ScalarVariable
+      name="bouOut2.outlet.backward.X_w"
+      valueReference="436207620"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 241 -->
+    <ScalarVariable
+      name="bouOut2.outlet.forward.T"
+      valueReference="335544324"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 242 -->
+    <ScalarVariable
+      name="bouOut2.outlet.forward.X_w"
+      valueReference="436207618"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 243 -->
+    <ScalarVariable
+      name="bouOut2.port_a.m_flow"
+      valueReference="436207616"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        quantity="MassFlowRate.Air"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 244 -->
+    <ScalarVariable
+      name="bouOut2.port_a.p"
+      valueReference="100663453"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 245 -->
+    <ScalarVariable
+      name="bouOut2.port_a.h_outflow"
+      valueReference="369098923"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="1000000.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 246 -->
+    <ScalarVariable
+      name="bouOut2.port_a.Xi_outflow[1]"
+      valueReference="436207620"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 247 -->
+    <ScalarVariable
+      name="bouOut2.bacPro_internal.T"
+      valueReference="436207619"
+      description="Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 248 -->
+    <ScalarVariable
+      name="bouOut2.bacPro_internal.X_w"
+      valueReference="436207620"
+      description="Water vapor mass fractions per kg total air">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 249 -->
+    <ScalarVariable
+      name="bouOut2.p_in_internal"
+      valueReference="100663454"
+      description="Internal connector for pressure"
+      variability="constant">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.PressureOutput"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 250 -->
+    <ScalarVariable
+      name="bouOut2.X_w_in_internal"
+      valueReference="436207618"
+      description="Internal connector for mass fraction of forward flow properties">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 251 -->
+    <ScalarVariable
+      name="bouOut2.X_w_out_internal"
+      valueReference="436207620"
+      description="Internal connector for mass fraction of backward flow properties">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="12"
+        dependencies="15"
+        dependenciesKind="dependent"/>
+      <Unknown index="18"
+        dependencies="15 23 24"
+        dependenciesKind="dependent dependent dependent"/>
+      <Unknown index="19"
+        dependencies="24"
+        dependenciesKind="fixed"/>
+      <Unknown index="22"
+        dependencies="15"
+        dependenciesKind="fixed"/>
+      <Unknown index="25"
+        dependencies="15 16 17"
+        dependenciesKind="dependent dependent dependent"/>
+      <Unknown index="26"
+        dependencies="17"
+        dependenciesKind="fixed"/>
+    </Outputs>
+    <InitialUnknowns>
+      <Unknown index="12"
+        dependencies="1 2 3 4 10 11 15"
+        dependenciesKind="dependent dependent dependent dependent dependent dependent dependent"/>
+      <Unknown index="18"
+        dependencies="1 2 3 4 5 10 11 15 23 24"
+        dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent"/>
+      <Unknown index="19"
+        dependencies="24"
+        dependenciesKind="dependent"/>
+      <Unknown index="22"
+        dependencies="15"
+        dependenciesKind="dependent"/>
+      <Unknown index="25"
+        dependencies="1 2 3 4 5 10 11 15 16 17"
+        dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent"/>
+      <Unknown index="26"
+        dependencies="17"
+        dependenciesKind="dependent"/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

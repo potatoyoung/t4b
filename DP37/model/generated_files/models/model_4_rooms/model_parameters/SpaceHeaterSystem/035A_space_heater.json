@@ -1,0 +1,9 @@
+{
+    "parameters": {
+        "heatTransferCoefficient": 83.1495759,
+        "nominalSupplyTemperature": 45,
+        "nominalReturnTemperature": 30,
+        "nominalRoomTemperature": 21,
+        "thermalMassHeatCapacity.hasValue": 125000
+    }
+}

@@ -1,0 +1,150 @@
+{
+    "parameters": {
+        "weekDayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "weekendRulesetDict": null,
+        "mondayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "tuesdayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "wednesdayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "thursdayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "fridayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "saturdayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "sundayRulesetDict": {
+            "ruleset_default_value": 20,
+            "ruleset_start_minute": [
+                0
+            ],
+            "ruleset_end_minute": [
+                0
+            ],
+            "ruleset_start_hour": [
+                7
+            ],
+            "ruleset_end_hour": [
+                17
+            ],
+            "ruleset_value": [
+                21
+            ]
+        },
+        "add_noise": false
+    }
+}

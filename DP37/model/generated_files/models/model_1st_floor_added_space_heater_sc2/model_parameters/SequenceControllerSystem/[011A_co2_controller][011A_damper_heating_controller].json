@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "kp__011A_co2_controller": 2.50773924e-04,
+        "Ti__011A_co2_controller": 3,
+        "isReverse__011A_co2_controller": false,
+        "offValue__011A_damper_heating_controller": 0,
+        "onValue__011A_damper_heating_controller": 0.3,
+        "isReverse__011A_damper_heating_controller": true
+    }
+}

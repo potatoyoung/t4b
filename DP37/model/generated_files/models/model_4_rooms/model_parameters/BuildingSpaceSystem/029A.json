@@ -1,0 +1,8 @@
+{
+    "parameters": {
+        "airMass": 63.83475000000001,
+        "outdoorCo2Concentration": 500,
+        "infiltration": 0.005,
+        "generationCo2Concentration": 5.145e-06
+    }
+}

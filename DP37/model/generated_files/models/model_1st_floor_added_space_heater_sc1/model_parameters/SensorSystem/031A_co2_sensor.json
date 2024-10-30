@@ -1,0 +1,8 @@
+{
+    "parameters": {},
+    "readings": {
+        "filename": "/data/Time series/Rooms/OD095_01_031A/OD095_01_031A_L95_LC02_BQA011_S2.plc_SENSOR_VALUE.csv",
+        "datecolumn": 2,
+        "valuecolumn": 4
+    }
+}

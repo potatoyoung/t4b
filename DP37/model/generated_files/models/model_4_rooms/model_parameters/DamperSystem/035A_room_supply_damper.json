@@ -1,0 +1,8 @@
+{
+    "parameters": {
+        "a": 1,
+        "b": 0.0953480578748204,
+        "c": -1,
+        "nominalAirFlowRate.hasValue": 0.10004166666666667
+    }
+}

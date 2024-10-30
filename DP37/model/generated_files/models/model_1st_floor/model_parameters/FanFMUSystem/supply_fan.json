@@ -1,0 +1,11 @@
+{
+    "parameters": {
+        "nominalPowerRate.hasValue": 3000,
+        "nominalAirFlowRate.hasValue": 3.055555555555556,
+        "c1": 0,
+        "c2": 0.5,
+        "c3": 0.5,
+        "c4": 0,
+        "f_total": 1
+    }
+}

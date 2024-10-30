@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "eps_75_h": 0.84918046,
+        "eps_75_c": 0.82754917,
+        "eps_100_h": 0.85202735,
+        "eps_100_c": 0.8215695,
+        "primaryAirFlowRateMax.hasValue": 3.055555555555556,
+        "secondaryAirFlowRateMax.hasValue": 3.055555555555556
+    }
+}

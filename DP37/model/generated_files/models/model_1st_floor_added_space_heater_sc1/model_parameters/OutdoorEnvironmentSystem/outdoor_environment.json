@@ -1,0 +1,8 @@
+{
+    "parameters": {},
+    "readings": {
+        "filename": "data/Time series/Weather/weather_DMI.csv",
+        "datecolumn": 0,
+        "valuecolumn": 1
+    }
+}

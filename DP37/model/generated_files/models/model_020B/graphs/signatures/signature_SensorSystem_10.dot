@@ -1,0 +1,76 @@
+digraph G {
+subgraph  {
+<Sensor
+n<SUB>1</SUB>> [color=black, fillcolor="#83AF9B", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<Sensor<br />n<SUB>1</SUB>>, labelcharcount=6, labellinecount=2, width=1.6];
+}
+
+subgraph  {
+<Temperature
+n<SUB>2</SUB>> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<Temperature<br />n<SUB>2</SUB>>, labelcharcount=11, labellinecount=2, width=2.6];
+}
+
+<Sensor
+n<SUB>1</SUB>> -> <Temperature
+n<SUB>2</SUB>>  [fontname="CMU Typewriter Text", label="observes  "];
+subgraph  {
+<System
+n<SUB>6</SUB>> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<System<br />n<SUB>6</SUB>>, labelcharcount=6, labellinecount=2, width=1.6];
+}
+
+subgraph  {
+<Coil
+n<SUB>3</SUB>> [color=black, fillcolor="#873939", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<Coil<br />n<SUB>3</SUB>>, labelcharcount=5, labellinecount=2, width=1.4];
+}
+
+<System
+n<SUB>6</SUB>> -> <Coil
+n<SUB>3</SUB>>  [fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+subgraph  {
+<System
+n<SUB>7</SUB>> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<System<br />n<SUB>7</SUB>>, labelcharcount=6, labellinecount=2, width=1.6];
+}
+
+<Coil
+n<SUB>3</SUB>> -> <System
+n<SUB>7</SUB>>  [fontname="CMU Typewriter Text", label="returnsFluidTo  "];
+subgraph  {
+<Coil
+n<SUB>5</SUB>> [color=black, fillcolor="#873939", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<Coil<br />n<SUB>5</SUB>>, labelcharcount=5, labellinecount=2, width=1.4];
+}
+
+<Coil
+n<SUB>3</SUB>> -> <Coil
+n<SUB>5</SUB>>  [fontname="CMU Typewriter Text", label="subSystemOf  "];
+subgraph  {
+<System
+n<SUB>8</SUB>> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<System<br />n<SUB>8</SUB>>, labelcharcount=6, labellinecount=2, width=1.6];
+}
+
+subgraph  {
+<Coil
+n<SUB>4</SUB>> [color=black, fillcolor="#873939", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<Coil<br />n<SUB>4</SUB>>, labelcharcount=5, labellinecount=2, width=1.4];
+}
+
+<System
+n<SUB>8</SUB>> -> <Coil
+n<SUB>4</SUB>>  [fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+<Coil
+n<SUB>4</SUB>> -> <Coil
+n<SUB>5</SUB>>  [fontname="CMU Typewriter Text", label="subSystemOf  "];
+subgraph  {
+<System
+n<SUB>9</SUB>> [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=1.1, label=<System<br />n<SUB>9</SUB>>, labelcharcount=6, labellinecount=2, width=1.6];
+}
+
+<Coil
+n<SUB>4</SUB>> -> <System
+n<SUB>9</SUB>>  [fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+subgraph  {
+28 [color=black, fillcolor="#71797E", fontname="CMU Typewriter Text", fontsize=28, height=0.3, label=<>, labelcharcount=0, labellinecount=0, shape=circle, width=0.3];
+}
+
+<Coil
+n<SUB>4</SUB>> -> 28  [arrowhead=none, fontname="CMU Typewriter Text", label="suppliesFluidTo  "];
+28 -> <Sensor
+n<SUB>1</SUB>>  [label=""];
+}

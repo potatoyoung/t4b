@@ -1,0 +1,7 @@
+{
+    "parameters": {},
+    "readings": {"filename": "/data/Time series/Rooms/OD095_01_020B/OD095_01_020B_L95_LC02_QNA020_C1.plc_ACTUATOR_VALUE.csv",
+                "datecolumn": 2,
+                "valuecolumn": 4}
+    
+}

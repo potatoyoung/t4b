@@ -1,0 +1,7 @@
+{
+    "parameters": {
+        "offValue": 0,
+        "onValue": 1,
+        "isReverse": true
+    }
+}
